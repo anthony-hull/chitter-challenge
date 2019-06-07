@@ -1,4 +1,4 @@
-Chitter Challenge
+Anthony's Chitter Challenge
 =================
 
 * Challenge time: rest of the day and weekend, until Monday 9am
