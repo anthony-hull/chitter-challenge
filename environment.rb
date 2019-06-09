@@ -7,8 +7,7 @@ $stdout.sync = true
 
 # Load the application
 require_relative './app'
-
-require_relative './config/database.yml'
+require 'rake'
 
 
 require 'sinatra/activerecord/rake'

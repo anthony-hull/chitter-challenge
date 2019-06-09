@@ -5,20 +5,26 @@ class Chitter < Sinatra::Base
   Dir["#{current_dir}/models/*.rb"].each { |file| require file }
 
   get '/' do
+    redirect '/peeps'
+  end
+
+
+  get '/peeps' do
+    @peeps = Peep.all
     erb :index
   end
 
-
-  get '/articles' do
-    @peeps = Peep.all
+  get '/peeps/add' do
+    erb :add
   end
 
-  get '/articles/:id' do
+  get '/peeps/:id' do
     @peep = Peep.find(params[:id])
   end
 
-  put '/articles/:id/create' do
-    @peep = Peep.create(params[:peep])
+  post '/peeps/add' do
+    @peep = Peep.create(content: params[:peep])
+    redirect '/peeps'
   end
 
   delete '/articles/:id' do
