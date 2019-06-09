@@ -1,4 +1,4 @@
-development:
+test:
   adapter: postgresql
   encoding: unicode
   database: chitter_test
@@ -6,7 +6,7 @@ development:
   username: anthonyhull
   password:
 
-production:
+development:
   adapter: postgresql
   encoding: unicode
   database: chitter

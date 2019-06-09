@@ -1,3 +1,4 @@
+require 'pry-byebug'
 require 'sinatra/activerecord'
 class Chitter < Sinatra::Base
 
@@ -11,6 +12,7 @@ class Chitter < Sinatra::Base
 
   get '/peeps' do
     @peeps = Peep.all
+    @peeps = @peeps.order(created_at: :desc)
     erb :index
   end
 
